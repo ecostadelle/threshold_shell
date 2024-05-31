@@ -1,5 +1,3 @@
-Claro, aqui está a tradução do texto para o português do Brasil:
-
 # Desafio de Transição de Frota
 
 **Introdução -**
@@ -12,7 +10,7 @@ Frotas profissionais, de entrega e operacionais são uma contribuição signific
 
 **Declaração do Problema -**
 
-O transporte rodoviário é a espinha dorsal da cadeia de suprimentos, desempenhando um papel fundamental no transporte de mercadorias e no fortalecimento da economia. Este modo de transporte tem vantagens como flexibilidade, serviço porta a porta e conectividade entre cidades, vilas e aldeias. Embora venha com conveniência e vantagem, as frotas profissionais, de entrega e operacionais são uma contribuição significativa para as emissões globais de gases de efeito estufa. Os proprietários de frotas aspiram a alcançar emissões líquidas zero prontamente; no entanto, a transição apresenta um dilema complexo. Equilibrar a urgência de alcançar emissões líquidas zero com a sustentabilidade dos negócios e a satisfação do cliente requer uma estrutura de tomada de decisão que considere fatores como tempo, localização e abordagem. Neste hackathon, você terá a chance de desenvolver modelos matemáticos para otimizar estratégias de descarbonização de frotas, para ajudar os proprietários de frotas a tomar decisões informadas que se alinhem com seus objetivos de transição energética e resultados de negócios. Ao aproveitar o poder dos dados e dos modelos matemáticos, você navegará pelas complexidades das previsões de demanda, dissecará perfis de emissão e encontrará maneiras de atingir metas de emissão ambiciosas. O objetivo final é desenvolver soluções engenhosas que equilibrem a eficácia operacional e o impacto ambiental. Forneceremos vários dados de ‘demanda’ anuais de um operador de frota que devem ser atendidos. Os dados de demanda são ainda divididos em vários baldes de tamanho e distância que indicam quais tamanhos de veículo devem ser usados e quanto de distância por dia eles podem percorrer. Estas são algumas restrições adicionais impostas para atender à demanda do cliente. Fornecemos vários veículos dos seguintes 3 trens de força: Diesel, GNL e BEV (Veículo Elétrico a Bateria). Para cada um desses veículos, o custo, a faixa operacional anual, o balde de distância que eles podem cobrir e o ID do veículo (identificador único que ajuda você a referenciá-los em sua solução) são fornecidos. Incluímos as informações sobre o consumo de combustível de cada modelo do veículo e os tipos de combustível correspondentes. Além disso, também incluímos o custo de cada tipo de combustível, juntamente com a quantidade de emissões de carbono por cada um deles, para cada ano. Finalmente, você também é fornecido com os limites totais de emissão de carbono que não devem ser excedidos a cada ano. Todos os dados fornecidos abrangem os anos de 2023 a 2038 (ambos os anos inclusive), para um total de 16 anos
+O transporte rodoviário é a espinha dorsal da cadeia de suprimentos, desempenhando um papel fundamental no transporte de mercadorias e no fortalecimento da economia. Este modo de transporte tem vantagens como flexibilidade, serviço porta a porta e conectividade entre cidades, vilas e aldeias. Embora venha com conveniência e vantagem, as frotas profissionais, de entrega e operacionais são uma contribuição significativa para as emissões globais de gases de efeito estufa. Os proprietários de frotas aspiram a alcançar emissões líquidas zero prontamente; no entanto, a transição apresenta um dilema complexo. Equilibrar a urgência de alcançar emissões líquidas zero com a sustentabilidade dos negócios e a satisfação do cliente requer uma estrutura de tomada de decisão que considere fatores como tempo, localização e abordagem. Neste hackathon, você terá a chance de desenvolver modelos matemáticos para otimizar estratégias de descarbonização de frotas, para ajudar os proprietários de frotas a tomar decisões informadas que se alinhem com seus objetivos de transição energética e resultados de negócios. Ao aproveitar o poder dos dados e dos modelos matemáticos, você navegará pelas complexidades das previsões de demanda, dissecará perfis de emissão e encontrará maneiras de atingir metas de emissão ambiciosas. O objetivo final é desenvolver soluções engenhosas que equilibrem a eficácia operacional e o impacto ambiental. Forneceremos vários dados de ‘demanda’ anuais de um operador de frota que devem ser atendidos. Os dados de demanda são ainda divididos em vários caçambas de tamanho e distância que indicam quais tamanhos de veículo devem ser usados e quanto de distância por dia eles podem percorrer. Estas são algumas restrições adicionais impostas para atender à demanda do cliente. Fornecemos vários veículos dos seguintes 3 trens de força: Diesel, GNL e BEV (Veículo Elétrico a Bateria). Para cada um desses veículos, o custo, a faixa operacional anual, o caçamba de distância que eles podem cobrir e o ID do veículo (identificador único que ajuda você a referenciá-los em sua solução) são fornecidos. Incluímos as informações sobre o consumo de combustível de cada modelo do veículo e os tipos de combustível correspondentes. Além disso, também incluímos o custo de cada tipo de combustível, juntamente com a quantidade de emissões de carbono por cada um deles, para cada ano. Finalmente, você também é fornecido com os limites totais de emissão de carbono que não devem ser excedidos a cada ano. Todos os dados fornecidos abrangem os anos de 2023 a 2038 (ambos os anos inclusive), para um total de 16 anos
 
 Sua solução deve fornecer uma composição de frota ideal ao longo dos anos, que atenda a toda a demanda da cadeia de suprimentos e restrições, enquanto respeita os limites de emissão de carbono para cada ano e tem o menor custo total possível. Os dados fornecidos a você e a solução esperada de você foram explicados com mais detalhes na próxima seção.
 
@@ -20,8 +18,8 @@ Sua solução deve fornecer uma composição de frota ideal ao longo dos anos, q
 
 O conjunto de dados contém o seguinte:
 
-- **demand.csv**: Este arquivo fornece a demanda total de distância anual (em kms) que precisa ser satisfeita com veículos do tamanho Sx (balde de tamanho) que podem percorrer pelo menos um mínimo de Dx (balde de distância) por dia. Por exemplo, a linha 1 indica que há uma demanda anual de 869181 km para os veículos de tamanho S1 que podem percorrer pelo menos um mínimo de balde de distância D1 por dia.
-- **vehicles.csv**: Este arquivo fornece o ID do veículo (modelo), tipo de veículo (trem de força), balde de tamanho, ano em que você pode comprá-lo, custo de compra, alcance anual (em kms) e o balde de distância máxima diária que pode percorrer.
+- **demand.csv**: Este arquivo fornece a demanda total de distância anual (em kms) que precisa ser satisfeita com veículos do tamanho Sx (caçamba de tamanho) que podem percorrer pelo menos um mínimo de Dx (caçamba de distância) por dia. Por exemplo, a linha 1 indica que há uma demanda anual de 869181 km para os veículos de tamanho S1 que podem percorrer pelo menos um mínimo de caçamba de distância D1 por dia.
+- **vehicles.csv**: Este arquivo fornece o ID do veículo (modelo), tipo de veículo (trem de força), caçamba de tamanho, ano em que você pode comprá-lo, custo de compra, alcance anual (em kms) e o caçamba de distância máxima diária que pode percorrer.
 - **vehicles_fuels.csv**: Este arquivo fornece o consumo de combustível (unidade de combustível consumida/km) para cada ID de veículo usando um determinado tipo de combustível.
 - **fuels.csv**: Existem 5 tipos de combustível e, para cada um, esta tabela fornece a emissão de carbono por unidade de combustível e o custo (mediano) por unidade de combustível ao longo de todos os anos. Também inclui a incerteza no custo do combustível.
 - **carbon_emissions.csv**: Fornece os limites totais de emissões de carbono que não devem ser violados para cada ano. É um perfil decrescente ao longo dos anos.
@@ -47,13 +45,13 @@ As colunas fornecidas no conjunto de dados são as seguintes:
 
 **Restrições -**
 
-- O veículo do tamanho Sx só pode atender à demanda do balde de tamanho Sx.
-- O veículo pertencente ao balde de distância Dx pode satisfazer todas as demandas para o balde de distância D1 a Dx. Por exemplo, o veículo pertencente ao balde de distância D4 pode satisfazer a demanda dos baldes D1, D2, D3, D4; da mesma forma, D3 pode satisfazer D1, D2, D3, mas NÃO D4.
+- O veículo do tamanho Sx só pode atender à demanda do caçamba de tamanho Sx.
+- O veículo pertencente ao caçamba de distância Dx pode satisfazer todas as demandas para o caçamba de distância D1 a Dx. Por exemplo, o veículo pertencente ao caçamba de distância D4 pode satisfazer a demanda dos caçambas D1, D2, D3, D4; da mesma forma, D3 pode satisfazer D1, D2, D3, mas NÃO D4.
 - A emissão total de carbono pelas operações da frota a cada ano deve estar dentro dos limites de emissões de carbono do respectivo ano fornecidos em carbon_emissions.csv. As emissões totais de carbono para um ano são calculadas usando:
 
 ![Emissões totais de carbono](https://he-s3.s3.amazonaws.com/media/uploads/c9a8dd89-e5be-4481-b37d-7ee6d082a5c0.png)
 
-- A demanda total anual para cada ano deve ser satisfeita para cada balde de distância e tamanho.
+- A demanda total anual para cada ano deve ser satisfeita para cada caçamba de distância e tamanho.
 - O modelo de veículo do ano 20xx só pode ser comprado no ano 20xx. Por exemplo, Diesel_S1_2026 só pode ser comprado em 2026 e não em nenhum ano subsequente ou anterior.
 - Todo veículo tem uma vida útil de 10 anos e deve ser vendido no final do 10º ano. Por exemplo, um veículo comprado em 2025 deve ser vendido no final de 2034.
 - Você não pode comprar/vender um veículo no meio do ano. Todas as operações de compra acontecem no início do ano e todas as operações de venda acontecem no final do ano.
@@ -80,7 +78,7 @@ Você deve fornecer a solução em um arquivo .csv. Os nomes das colunas que dev
 | Distance_bucket | Deve estar entre D1, D2, D3, D4. |
 | Distance_per_vehicle(km) | Deve ser >= 0 e <= Alcance anual desse modelo. |
 
-Nota: O balde de distância do arquivo de solução corresponde ao balde de distância no arquivo demand.csv. Note que este não é o balde de distância do próprio veículo (obtemos isso de vehicles.csv de qualquer maneira usando o ID fornecido).
+Nota: O caçamba de distância do arquivo de solução corresponde ao caçamba de distância no arquivo demand.csv. Note que este não é o caçamba de distância do próprio veículo (obtemos isso de vehicles.csv de qualquer maneira usando o ID fornecido).
 
 **Informações adicionais -**
 
@@ -92,13 +90,13 @@ Para ilustrar os cálculos, vamos pegar um exemplo de custo de compra = $100 par
 
 ![Cálculo de valores](https://he-s3.s3.amazonaws.com/media/uploads/646ae323-3ed5-4b65-8aff-43022858ae22.png)
 
-- Mapeamentos de balde de distância -
+- Mapeamentos de caçamba de distância -
 
-![Mapeamentos de balde de distância](https://he-s3.s3.amazonaws.com/media/uploads/bc8a84d0-2a77-42b5-a129-ba82971dfeea.png)
+![Mapeamentos de caçamba de distância](https://he-s3.s3.amazonaws.com/media/uploads/bc8a84d0-2a77-42b5-a129-ba82971dfeea.png)
 
-- Mapeamentos de balde de tamanho de veículo -
+- Mapeamentos de caçamba de tamanho de veículo -
 
-![Mapeamentos de balde de tamanho de veículo](https://he-s3.s3.amazonaws.com/media/uploads/b77e8680-f0b2-4c07-a29b-c86db7e39149.png)
+![Mapeamentos de caçamba de tamanho de veículo](https://he-s3.s3.amazonaws.com/media/uploads/b77e8680-f0b2-4c07-a29b-c86db7e39149.png)
 
 Por favor, note que os custos de seguro e manutenção devem ser calculados para todos os veículos da frota (independentemente de serem usados em um determinado ano), enquanto os custos de combustível são apenas para aqueles veículos que serão usados (dirigidos) naquele ano.
 
@@ -122,14 +120,14 @@ Como você pode ver no arquivo fuels.csv, um custo de combustível mediano junto
 - **3 -** A entrada Num_Vehicles deve ser do tipo inteiro.
 - **4 -** A entrada do tipo deve ser uma string.
 - **5 -** A entrada de combustível deve ser uma string.
-- **6 -** A entrada do balde de distância deve ser uma string.
+- **6 -** A entrada do caçamba de distância deve ser uma string.
 - **7 -** A entrada Distance_driven_per_vehicle(km) deve ser do tipo float.
 - **8 -** A entrada do ano deve ser >=2023 e <=2038.
 - **9 -** O ID deve estar na lista fornecida de IDs de veículos.
 - **10 -** Num_Vehicles deve ser > 0.
 - **11 -** O tipo deve assumir valores entre “Buy”, “Sell”, “Use”.
 - **12 -** O combustível deve estar entre “Electricity”, “LNG”, “BioLNG”, “HVO”, “B20”.
-- **13 -** O balde de distância deve estar entre “D1”, “D2”, “D3”, “D4”.
+- **13 -** O caçamba de distância deve estar entre “D1”, “D2”, “D3”, “D4”.
 - **14 -** A distância percorrida deve ser >= 0 e <= Alcance anual para aquele modelo.
 - **15 -** Violações da Restrição 2.
 - **16 -** Violação da Restrição 5. O veículo comprado no ano YYYY deve ter YYYY em seu ID.
