@@ -51,7 +51,7 @@ As colunas fornecidas no conjunto de dados são as seguintes:
 - O veículo pertencente ao balde de distância Dx pode satisfazer todas as demandas para o balde de distância D1 a Dx. Por exemplo, o veículo pertencente ao balde de distância D4 pode satisfazer a demanda dos baldes D1, D2, D3, D4; da mesma forma, D3 pode satisfazer D1, D2, D3, mas NÃO D4.
 - A emissão total de carbono pelas operações da frota a cada ano deve estar dentro dos limites de emissões de carbono do respectivo ano fornecidos em carbon_emissions.csv. As emissões totais de carbono para um ano são calculadas usando:
 
-    ![Emissões totais de carbono](https://he-s3.s3.amazonaws.com/media/uploads/c9a8dd89-e5be-4481-b37d-7ee6d082a5c0.png)
+![Emissões totais de carbono](https://he-s3.s3.amazonaws.com/media/uploads/c9a8dd89-e5be-4481-b37d-7ee6d082a5c0.png)
 
 - A demanda total anual para cada ano deve ser satisfeita para cada balde de distância e tamanho.
 - O modelo de veículo do ano 20xx só pode ser comprado no ano 20xx. Por exemplo, Diesel_S1_2026 só pode ser comprado em 2026 e não em nenhum ano subsequente ou anterior.
@@ -86,19 +86,19 @@ Nota: O balde de distância do arquivo de solução corresponde ao balde de dist
 
 - O valor de revenda do veículo, o custo do seguro e os custos de manutenção como uma porcentagem de seu custo de compra são fornecidos abaixo para cada ano após a compra do veículo.
 
-    ![Valor de revenda do veículo, custo do seguro e custos de manutenção](https://he-s3.s3.amazonaws.com/media/uploads/c2bac1dc-565c-4447-8d26-c927e264dc81.png)
+![Valor de revenda do veículo, custo do seguro e custos de manutenção](https://he-s3.s3.amazonaws.com/media/uploads/c2bac1dc-565c-4447-8d26-c927e264dc81.png)
 
 Para ilustrar os cálculos, vamos pegar um exemplo de custo de compra = $100 para um veículo comprado em 1º de janeiro de 2025. Usando as porcentagens na tabela acima, os valores podem ser calculados da seguinte maneira:
 
-    ![Cálculo de valores](https://he-s3.s3.amazonaws.com/media/uploads/646ae323-3ed5-4b65-8aff-43022858ae22.png)
+![Cálculo de valores](https://he-s3.s3.amazonaws.com/media/uploads/646ae323-3ed5-4b65-8aff-43022858ae22.png)
 
 - Mapeamentos de balde de distância -
 
-    ![Mapeamentos de balde de distância](https://he-s3.s3.amazonaws.com/media/uploads/bc8a84d0-2a77-42b5-a129-ba82971dfeea.png)
+![Mapeamentos de balde de distância](https://he-s3.s3.amazonaws.com/media/uploads/bc8a84d0-2a77-42b5-a129-ba82971dfeea.png)
 
 - Mapeamentos de balde de tamanho de veículo -
 
-    ![Mapeamentos de balde de tamanho de veículo](https://he-s3.s3.amazonaws.com/media/uploads/b77e8680-f0b2-4c07-a29b-c86db7e39149.png)
+![Mapeamentos de balde de tamanho de veículo](https://he-s3.s3.amazonaws.com/media/uploads/b77e8680-f0b2-4c07-a29b-c86db7e39149.png)
 
 Por favor, note que os custos de seguro e manutenção devem ser calculados para todos os veículos da frota (independentemente de serem usados em um determinado ano), enquanto os custos de combustível são apenas para aqueles veículos que serão usados (dirigidos) naquele ano.
 
