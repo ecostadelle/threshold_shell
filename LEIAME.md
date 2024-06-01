@@ -41,11 +41,11 @@ As colunas fornecidas no conjunto de dados são as seguintes:
 
 $$ C_{total} = \text{Custo total de propriedade e operação da frota ao longo de todos os anos.} $$
 
-$$ C_{ins}^y = \text{Custo total do seguro incorrido nos veículos da frota para o ano } y. $$
+$$ C_{ins}^{yr} = \text{Custo total do seguro incorrido nos veículos da frota para o ano} $$
 
-$$ C_{mnt}^y = \text{Custo total de manutenção incorrido nos veículos da frota para o ano } y. $$
+$$ C_{mnt}^{yr} = \text{Custo total de manutenção incorrido nos veículos da frota para o ano} $$
 
-$$ C_{fuel}^y = \text{Custo total de combustível ao queimar algum tipo de combustível } f \text{ em aquecimento no ano } y. $$
+$$ C_{fuel}^{yr} = \text{Custo total de combustível ao queimar algum tipo de combustível no ano}  $$
 
 $$ V_{srt}^y = \text{Quantia recebida pela venda de alguns veículos da frota no ano } y. $$
 
@@ -73,23 +73,17 @@ $$ M^{s'}_yr= \text{Custo de depreciação no ano } y \text{ para veículo Y_sub
 
 **Objetivo**
 
-$$ C_{total} = \sum_{Y=2023}^{2038} C_{buy}^{yr} + C_{ins}^{yr} + C_{mnt}^{yr} + C_{fuel}^{yr} - C_{sell}^{yr} $$
+$$ C_{total} = \sum_{yr=2023}^{2038} C_{buy}^{yr} + C_{ins}^{yr} + C_{mnt}^{yr} + C_{fuel}^{yr} - C_{sell}^{yr} $$
 
-$$
-C^{BY}_{Y} = \frac{\sum_{VP,YR}(C_{VP,YR}) \cdot N_{VP,YR}}{\sum_{VP,YR}(N_{VP,YR})}
-$$
+$$ C_{buy}^{yr} = \frac{\sum_{v_{yr} \in V_{yr}}vC_{v_{yrp}} \cdot N_{VP,YR}}{\sum_{VP,YR}(N_{VP,YR})} $$
 
-$$
-C^{INS}_{Y} = \frac{\sum_{FV,YR}(I^*VRP) \cdot N^*VRP}{\sum_{FV,YR}(N^*VRP)}
-$$
+$$ C_{ins}^{yr} = \frac{\sum_{FV,YR}(I^*VRP) \cdot N^*VRP}{\sum_{FV,YR}(N^*VRP)} $$
 
-$$
-C^{MT}_{Y}= \frac{\sum_{FV,YR}(D^*SF) \cdot (N^*mf - mf_k) + C^{IR}}{\sum_{FV,YR}(D^*SF)}
-$$
+$$ C_{mnt}^{yr} = \frac{\sum_{FV,YR}(D^*SF) \cdot (N^*mf - mf_k) + C^{IR}}{\sum_{FV,YR}(D^*SF)} $$
 
-$$
-C^{FUEL}_{Y}= \frac{\sum_{VP,FV,YR}(D^*VRP \cdot N^*_f/eff)}{\sum_{VP,FV,YR}(D^*VRP)}
-$$
+$$ C_{fuel}^{yr} = \frac{\sum_{VP,FV,YR}(D^*VRP \cdot N^*_f/eff)}{\sum_{VP,FV,YR}(D^*VRP)} $$
+
+$$ C_{sell}^{yr} = $$
 
 ![Objetivo](https://he-s3.s3.amazonaws.com/media/uploads/6d5a0bfd-1dab-4f77-b3e2-9400cadd09d4.png)
 
