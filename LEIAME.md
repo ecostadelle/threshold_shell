@@ -39,51 +39,7 @@ As colunas fornecidas no conjunto de dados são as seguintes:
 
 ![Notações](https://he-s3.s3.amazonaws.com/media/uploads/da684fa5-3f31-447e-a544-14cfd8f0dc51.png)
 
-$$ C_{total} = \text{Custo total de propriedade e operação da frota ao longo de todos os anos.} $$
-
-$$ C_{ins}^{yr} = \text{Custo total do seguro incorrido nos veículos da frota para o ano} $$
-
-$$ C_{mnt}^{yr} = \text{Custo total de manutenção incorrido nos veículos da frota para o ano} $$
-
-$$ C_{fuel}^{yr} = \text{Custo total de combustível ao queimar algum tipo de combustível no ano}  $$
-
-$$ V_{srt}^y = \text{Quantia recebida pela venda de alguns veículos da frota no ano } y. $$
-
-$$ V_{cst}^y = S_y - E_y + I_y - O_y + P_y - N_y $$
-
-$$ S_y = \text{Conjunto de todos os veículos na frota operacional no ano } y. $$
-
-$$ E_y = \text{Número de veículos vendidos que foram comprados antes do início do ano } y. $$
-
-$$ I_y = \text{Frota de veículos em uso ou comprados durante aquele ano.} $$
-
-$$ O_y= \text{Número de veículos vendidos que foram comprados antes do início do ano } y. $$
-
-$$ N_{p,y}= F_p + R_p + W_p \text{ (onde } p \text{ indica compra)} $$
-
-$$ N_{s,y}= F_s + R_s + W_s \text{ (onde } s \text{ indica venda)} $$
-
-$$ I_{p,y}= \text{Número de veículos em operação no ano } y \text{ que foram comprados é no ano } p+y'. \text{ (onde } p+y' \text{ indica compra)} $$
-
-$$ O_{s,y}= \text{Custo do seguro que o veículo do ano } s' \text{ incorreu durante o ano } p+y'. \text{ (onde } s'+y' \text{ indica venda)} $$
-
-$$ M^{p'}_y= \text{Custo de manutenção no ano } y \text{ para veículo Y_subj comprado no ano } yp'. \text{ (onde } yp' \text{ indica compra)} $$
-
-$$ M^{s'}_yr= \text{Custo de depreciação no ano } y \text{ para veículo Y_subj vendido no ano } ys'. \text{ (onde } ys' \text{ indica venda)} $$
-
 **Objetivo**
-
-$$ C_{total} = \sum_{yr=2023}^{2038} C_{buy}^{yr} + C_{ins}^{yr} + C_{mnt}^{yr} + C_{fuel}^{yr} - C_{sell}^{yr} $$
-
-$$ C_{buy}^{yr} = \frac{\sum_{v_{yr} \in V_{yr}}vC_{v_{yrp}} \cdot N_{VP,YR}}{\sum_{VP,YR}(N_{VP,YR})} $$
-
-$$ C_{ins}^{yr} = \frac{\sum_{FV,YR}(I^*VRP) \cdot N^*VRP}{\sum_{FV,YR}(N^*VRP)} $$
-
-$$ C_{mnt}^{yr} = \frac{\sum_{FV,YR}(D^*SF) \cdot (N^*mf - mf_k) + C^{IR}}{\sum_{FV,YR}(D^*SF)} $$
-
-$$ C_{fuel}^{yr} = \frac{\sum_{VP,FV,YR}(D^*VRP \cdot N^*_f/eff)}{\sum_{VP,FV,YR}(D^*VRP)} $$
-
-$$ C_{sell}^{yr} = $$
 
 ![Objetivo](https://he-s3.s3.amazonaws.com/media/uploads/6d5a0bfd-1dab-4f77-b3e2-9400cadd09d4.png)
 
