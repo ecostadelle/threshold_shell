@@ -75,7 +75,7 @@ $$ M^{s'}_yr= \text{Custo de depreciação no ano } y \text{ para veículo Y_sub
 
 **Objetivo**
 
-$$ \target{Custo total de propriedade e operação da frota ao longo de todos os anos.}C_{total} = \sum^{2038}_{Y=2023} C^{yr}_{buy} + C^{yr}_{ins} + C^{yr}_{mnt} + C^{yr}_{fuel} - C^{yr}_{sell} $$
+$$ C_{total} = \sum^{2038}_{Y=2023} C^{yr}_{buy} + C^{yr}_{ins} + C^{yr}_{mnt} + C^{yr}_{fuel} - C^{yr}_{sell} $$
 
 $$
 C^{BY}_{Y} = \frac{\sum_{VP,YR}(C_{VP,YR}) \cdot N_{VP,YR}}{\sum_{VP,YR}(N_{VP,YR})}
