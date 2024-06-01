@@ -39,8 +39,6 @@ As colunas fornecidas no conjunto de dados são as seguintes:
 
 ![Notações](https://he-s3.s3.amazonaws.com/media/uploads/da684fa5-3f31-447e-a544-14cfd8f0dc51.png)
 
-Claro, aqui estão as legendas das equações reescritas em LaTeX:
-
 $$ C_{total} = \text{Custo total de propriedade e operação da frota ao longo de todos os anos.} $$
 
 $$ C_{ins}^y = \text{Custo total do seguro incorrido nos veículos da frota para o ano } y. $$
@@ -75,7 +73,7 @@ $$ M^{s'}_yr= \text{Custo de depreciação no ano } y \text{ para veículo Y_sub
 
 **Objetivo**
 
-$$ C_{total} = \sum^{2038}_{Y=2023} C^{yr}_{buy} + C^{yr}_{ins} + C^{yr}_{mnt} + C^{yr}_{fuel} - C^{yr}_{sell} $$
+$$ C_{total} = \sum_{Y=2023}^{2038} C_{buy}^{yr} + C_{ins}^{yr} + C_{mnt}^{yr} + C_{fuel}^{yr} - C_{sell}^{yr} $$
 
 $$
 C^{BY}_{Y} = \frac{\sum_{VP,YR}(C_{VP,YR}) \cdot N_{VP,YR}}{\sum_{VP,YR}(N_{VP,YR})}
