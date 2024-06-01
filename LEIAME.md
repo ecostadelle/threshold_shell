@@ -39,7 +39,61 @@ As colunas fornecidas no conjunto de dados são as seguintes:
 
 ![Notações](https://he-s3.s3.amazonaws.com/media/uploads/da684fa5-3f31-447e-a544-14cfd8f0dc51.png)
 
+Claro, aqui estão as legendas das equações reescritas em LaTeX:
+
+$$ C_{total} = \text{Custo total de propriedade e operação da frota ao longo de todos os anos.} $$
+
+$$ C_{ins}^y = \text{Custo total do seguro incorrido nos veículos da frota para o ano } y. $$
+
+$$ C_{mnt}^y = \text{Custo total de manutenção incorrido nos veículos da frota para o ano } y. $$
+
+$$ C_{fuel}^y = \text{Custo total de combustível ao queimar algum tipo de combustível } f \text{ em aquecimento no ano } y. $$
+
+$$ V_{srt}^y = \text{Quantia recebida pela venda de alguns veículos da frota no ano } y. $$
+
+$$ V_{cst}^y = S_y - E_y + I_y - O_y + P_y - N_y $$
+
+$$ S_y = \text{Conjunto de todos os veículos na frota operacional no ano } y. $$
+
+$$ E_y = \text{Número de veículos vendidos que foram comprados antes do início do ano } y. $$
+
+$$ I_y = \text{Frota de veículos em uso ou comprados durante aquele ano.} $$
+
+$$ O_y= \text{Número de veículos vendidos que foram comprados antes do início do ano } y. $$
+
+$$ N_{p,y}= F_p + R_p + W_p \text{ (onde } p \text{ indica compra)} $$
+
+$$ N_{s,y}= F_s + R_s + W_s \text{ (onde } s \text{ indica venda)} $$
+
+$$ I_{p,y}= \text{Número de veículos em operação no ano } y \text{ que foram comprados é no ano } p+y'. \text{ (onde } p+y' \text{ indica compra)} $$
+
+$$ O_{s,y}= \text{Custo do seguro que o veículo do ano } s' \text{ incorreu durante o ano } p+y'. \text{ (onde } s'+y' \text{ indica venda)} $$
+
+$$ M^{p'}_y= \text{Custo de manutenção no ano } y \text{ para veículo Y_subj comprado no ano } yp'. \text{ (onde } yp' \text{ indica compra)} $$
+
+$$ M^{s'}_yr= \text{Custo de depreciação no ano } y \text{ para veículo Y_subj vendido no ano } ys'. \text{ (onde } ys' \text{ indica venda)} $$
+
 **Objetivo**
+
+$$
+C_{total} = \sum_{Y=2038}^{Y} (C^{BY}_{Y} + C^{INS}_{Y} + C^{MT}_{Y} + C^{FUEL}_{Y} - S^{ELL}_{Y})
+$$
+
+$$
+C^{BY}_{Y} = \frac{\sum_{VP,YR}(C_{VP,YR}) \cdot N_{VP,YR}}{\sum_{VP,YR}(N_{VP,YR})}
+$$
+
+$$
+C^{INS}_{Y} = \frac{\sum_{FV,YR}(I^*VRP) \cdot N^*VRP}{\sum_{FV,YR}(N^*VRP)}
+$$
+
+$$
+C^{MT}_{Y}= \frac{\sum_{FV,YR}(D^*SF) \cdot (N^*mf - mf_k) + C^{IR}}{\sum_{FV,YR}(D^*SF)}
+$$
+
+$$
+C^{FUEL}_{Y}= \frac{\sum_{VP,FV,YR}(D^*VRP \cdot N^*_f/eff)}{\sum_{VP,FV,YR}(D^*VRP)}
+$$
 
 ![Objetivo](https://he-s3.s3.amazonaws.com/media/uploads/6d5a0bfd-1dab-4f77-b3e2-9400cadd09d4.png)
 
