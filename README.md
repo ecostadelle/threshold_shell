@@ -1,20 +1,20 @@
 # Fleet Transition Challenge
 
-**Introduction -**
+**Introduction**
 
 Welcome to the fifth edition of the Shell.ai Hackathon for Sustainable and Affordable Energy. Shell.ai Hackathon brings together brilliant minds passionate about digital solutions and AI, to tackle real energy challenges and help build a lower-carbon world where everyone can access and afford energy.In the previous four editions, we addressed some of the digital challenges around the energy transition: windfarm layout optimization (2020), irradiance forecasting for solar power generation (2021), optimal placement of electric vehicle (EV) charging stations (2022), and supply chain optimization for biorefineries (2023). This year, we focus on fleet decarbonization - a transition problem in the mobility sector.
 
-**Challenge -**
+**Challenge**
 
 Professional, delivery and operational fleets are a significant contributor to global greenhouse emissions. Fleet owners aspire to achieve net-zero emissions promptly; however, the transition presents a complex dilemma. Balancing the urgency of achieving net-zero emissions with business sustainability and customer satisfaction requires a decision-making framework that considers factors such as timing,location, and approach. In this hackathon, you will have a chance to develop mathematical models to optimize fleet decarbonization strategies, to help fleet owners make informed decisions that align with their energy transition objectives and business outcomes. By harnessing the power of data and mathematical models, you will navigate the complexities of demand forecasts, dissect emission profiles,and find ways to meet ambitious emission targets. The end game is to develop ingenious solutions that strike a balance between operational effectiveness and environmental impact.
 
-**Problem Statement -**
+**Problem Statement**
 
 Road transport is the backbone of supply chain, playing a pivotal role in moving goods and bolstering the economy. This mode of transport’s advantages are flexibility, door-to-door service, and connectivity between cities, towns, and villages. While it comes with convenience and advantage, professional, delivery and operational fleets are a significant contributor to global greenhouse emissions. Fleet owners aspire to achieve net-zero emissions promptly; however, the transition presents a complex dilemma. Balancing the urgency of achieving net-zero emissions with business sustainability and customer satisfaction requires a decision-making framework that considers factors such as timing, location, and approach. In this hackathon, you will have a chance to develop mathematical models to optimize fleet decarbonization strategies, to help fleet owners make informed decisions that align with their energy transition objectives and business outcomes. By harnessing the power of data and mathematical models, you will navigate the complexities of demand forecasts, dissect emission profiles, and find ways to meet ambitious emission targets. The end game is todevelop ingenious solutions that strike a balance between operational effectiveness and environmental impact.We will provide various yearly ‘demand’ data from a fleet operator that must be met. The demand data is further divided into various size and distance buckets which indicate what vehicle sizes should be used and how much distance per day they can cover. These are some additional constraints imposed on meeting the customer demand. We provide various vehicles from the following 3 drivetrains: Diesel, LNG, and BEV (Battery Electric Vehicle). For each of these vehicles, the cost, operational yearly range, distance bucket they can cover, and the vehicle ID (unique identifier which helps you reference them in your solution) is provided. We include the information on the fuel consumption by every model of the vehicle and the corresponding fuel types. Furthermore, we also include the cost for every fuel type along with the amount of carbon emissions by each of them, for every single year. Finally, you are also provided with the total carbon emission limits that must not be exceeded every year. All the data provided spans the years 2023 to 2038 (both years inclusive), for a total of 16 years
 
 Your solution should provide an optimal fleet composition over the years, which meets all supply-chain demand and constraints while abiding by the carbon emission limits for every year and has the lowest overall cost possible. The data provided to you and the solution expected from you has been further explained in the next section.
 
-**Data description -**
+**Data description**
 
 The dataset contains the following:
 
@@ -35,7 +35,31 @@ The columns provided in the dataset are as follows:
 | destination_index | Within 0 to 2417 |
 | value | Any value following problem constraints |
 
-**Notations -**
+**Notations**
+
+$$
+C_{total} = \sum_{yr=2023}^{2038} C_{buy}^{yr} + C_{ins}^{yr} + C_{mnt}^{yr} + C_{fuel}^{yr} - C_{sell}^{yr}
+$$
+
+$$
+C_{buy}^{yr} = \sum_{v_{yr} \in V_{yr}} C_{v_{yr}} \cdot N_{v_{yr}}
+$$
+
+$$
+C_{ins}^{yr} = \sum_{v_{yrp} \in F_{yr}} C_{v_{yrp}} \cdot I_{(yrp-yr)}^{v_{yrp}} \cdot N_{v_{yr}}
+$$
+
+$$
+C_{mnt}^{yr} = \sum_{v_{yrp} \in F_{yr}} C_{v_{yrp}} \cdot M_{(yrp-yr)}^{v_{yrp}} \cdot N_{v_{yr}}
+$$
+
+$$
+C_{fuel} = \sum_{v \in U_{yr}} \sum_{f \in F_v} Ds_v^f \cdot N_v^f \cdot m_v^f \cdot C_{uf,f}^{yr}
+$$
+
+$$
+C_{sell}^{yr} = \sum_{v_{yrp} \in F_{yr}} C_{v_{yrp}} \cdot D_{(yrp-yr)}^{v_{yrp}} \cdot N_{yr,v_{yrp}}^{sell}
+$$
 
 ![Notations](https://he-s3.s3.amazonaws.com/media/uploads/da684fa5-3f31-447e-a544-14cfd8f0dc51.png)
 
@@ -45,17 +69,17 @@ The columns provided in the dataset are as follows:
 
 **Constraints -**
 
-- Vehicle of size Sx can only cater to the demand of size bucket Sx.
-- Vehicle belonging to distance bucket Dx can satisfy all demands for distance bucket D1 to Dx. For example, vehicle belonging to distance bucket D4 can satisfy demand of D1, D2, D3, D4 buckets; similarly, D3 can satisfy D1, D2, D3 but NOT D4.
-- Total carbon emitted by fleet operations each year should be within the respective year’s carbon emissions limits provided in carbon_emissions.csv. Total carbon emissions for a year is calculated using:
+1. Vehicle of size Sx can only cater to the demand of size bucket Sx.
+2. Vehicle belonging to distance bucket Dx can satisfy all demands for distance bucket D1 to Dx. For example, vehicle belonging to distance bucket D4 can satisfy demand of D1, D2, D3, D4 buckets; similarly, D3 can satisfy D1, D2, D3 but NOT D4.
+3. Total carbon emitted by fleet operations each year should be within the respective year’s carbon emissions limits provided in carbon_emissions.csv. Total carbon emissions for a year is calculated using:
 
     !Total carbon emissions
 
-- Total yearly demand for each year must be satisfied for each distance and size buckets.
-- Vehicle model of year 20xx can only be bought in the year 20xx. For example, Diesel_S1_2026 can only be bought in 2026 and not in any subsequent or previous years.
-- Every vehicle has a 10-year life and must be sold by the end of 10th year. For example, a vehicle bought in 2025 must be sold by the end of 2034.
-- You cannot buy/sell a vehicle mid-year. All buy operations happen at the beginning of the year and all sell operations happen at the end of the year.
-- Every year at most 20% of the vehicles in the existing fleet can be sold.
+4. Total yearly demand for each year must be satisfied for each distance and size buckets.
+5. Vehicle model of year 20xx can only be bought in the year 20xx. For example, Diesel_S1_2026 can only be bought in 2026 and not in any subsequent or previous years.
+5. Every vehicle has a 10-year life and must be sold by the end of 10th year. For example, a vehicle bought in 2025 must be sold by the end of 2034.
+7. You cannot buy/sell a vehicle mid-year. All buy operations happen at the beginning of the year and all sell operations happen at the end of the year.
+8. Every year at most 20% of the vehicles in the existing fleet can be sold.
 
 **Evaluation -**
 
